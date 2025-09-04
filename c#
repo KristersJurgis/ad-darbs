@@ -1,0 +1,98 @@
+using System.Security.Policy;
+using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace Aud1darbs
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+        public double firstNumber;
+        public double secondNumber;
+        public string operation;
+
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+
+        private void plusBTN_Click(object sender, RoutedEventArgs e)
+        {
+            operation = "+";
+        }
+
+        private void minusBTN_Click(object sender, RoutedEventArgs e)
+        {
+            operation = "-";
+
+        }
+
+        private void multiBTN_Click(object sender, RoutedEventArgs e)
+        {
+            operation = "*";
+
+        }
+
+        private void divBTN_Click(object sender, RoutedEventArgs e)
+        {
+            operation = "/";
+
+        }
+
+        private void eqBTN_Click(object sender, RoutedEventArgs e)
+        {
+            double? answer = null;    
+            firstNumber = Convert.ToDouble(firstnumberTB.Text);
+            secondNumber = Convert.ToDouble(secondnumberTB.Text);
+
+            switch(operation)
+            {
+                case "+":
+                    answer = firstNumber + secondNumber;
+                    break;
+                case "-":
+                    answer = firstNumber - secondNumber;
+                    break;
+                case "*":
+                    answer = firstNumber * secondNumber;
+                    break;
+                case "/":
+                    answer = firstNumber / secondNumber;
+                    break;
+                default:
+                    break;
+            }
+            answerTB.Text = Convert.ToString(answer);
+        }
+
+        private void firstnumberTB_GotFocus(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Convert.ToDouble(firstnumberTB.Text);
+                
+            }
+            catch 
+            {
+                firstnumberTB.Text = "";
+            }
+        }
+
+        private void secondnumberTB_GotFocus(object sender, RoutedEventArgs e)
+        {
+            secondnumberTB.Text = "";
+        }
+
+       
+    }
+}
