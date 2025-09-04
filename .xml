@@ -1,0 +1,35 @@
+<Window x:Name="Calculator" x:Class="Aud1darbs.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Aud1darbs"
+        mc:Ignorable="d"
+        Title="Calculator" Height="450" Width="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBox Grid.Row="0" Name="firstnumberTB" Text="Input first number" FontSize="30" VerticalAlignment="Center"  GotFocus="firstnumberTB_GotFocus"/>
+        <TextBox Grid.Row="1" Name="secondnumberTB" Text="Input second number" FontSize="30" VerticalAlignment="Center" GotFocus="secondnumberTB_GotFocus"></TextBox>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Name="plusBTN" Content="+" FontSize="30" Margin="0 10 5 10" Click="plusBTN_Click"></Button>
+            <Button Grid.Column="1" Name="minusBTN" Content="-" FontSize="30" Margin="5 10 5 10" Click="minusBTN_Click"></Button>
+            <Button Grid.Column="2" Name="multiBTN" Content="*" FontSize="30" Margin="5 10 5 10" Click="multiBTN_Click"></Button>
+            <Button Grid.Column="3" Name="divBTN" Content="/" FontSize="30" Margin="5 10 0 10" Click="divBTN_Click"></Button>
+        </Grid>
+        <Button Grid.Row="3" Name="eqBTN" Content="=" FontSize="30" Click="eqBTN_Click"></Button>
+        <TextBox Grid.Row="4" Name="answerTB" Text="Answer" FontSize="30" VerticalAlignment="Center"></TextBox>
+
+    </Grid>
+</Window>
